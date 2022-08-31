@@ -4,6 +4,7 @@ using AutoMapper;
 using BusinessLayer.Model.Models;
 using DataAccessLayer.Model.Interfaces;
 using DataAccessLayer.Model.Models;
+using Microsoft.Extensions.Logging.Abstractions;
 
 namespace BusinessLayer.Services
 {
@@ -42,5 +43,7 @@ namespace BusinessLayer.Services
             var result = _companyRepository.UpdateCompany(companyObject);
             return result;
         }
+
+        
     }
 }

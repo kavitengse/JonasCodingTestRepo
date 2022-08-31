@@ -1,6 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\JonasCodingTest-master",
+    "\\JonasCodingTest-master\\WebApi",
+    "\\JonasCodingTest-master\\WebApi\\App_Start",
+    "\\JonasCodingTest-master\\WebApi\\Controllers",
+    "\\JonasCodingTest-master\\WebApi\\View"
   ],
+  "SelectedNode": "\\JonasCodingTest-master\\WebApi\\View",
   "PreviewInSolutionExplorer": false
 }
