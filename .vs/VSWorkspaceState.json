@@ -5,8 +5,9 @@
     "\\JonasCodingTest-master\\WebApi",
     "\\JonasCodingTest-master\\WebApi\\App_Start",
     "\\JonasCodingTest-master\\WebApi\\Controllers",
-    "\\JonasCodingTest-master\\WebApi\\View"
+    "\\JonasCodingTest-master\\WebApi\\Views",
+    "\\JonasCodingTest-master\\WebApi\\Views\\Employee"
   ],
-  "SelectedNode": "\\JonasCodingTest-master\\WebApi\\View",
+  "SelectedNode": "\\JonasCodingTest-master\\WebApi\\Views\\Employee\\EmployeeView.cshtml",
   "PreviewInSolutionExplorer": false
 }

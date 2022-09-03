@@ -5,30 +5,47 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Mvc;
 using BusinessLayer.Model.Models;
+using Microsoft.Practices.EnterpriseLibrary.Logging;
 
 namespace WebApi.Controllers
 {
     public class EmployeeController : Controller
     {
        
-        public EmployeeController()
+       
+        public ActionResult Employee()
         {
-           
-        }
-        [System.Web.Http.HttpPost]
-        public ActionResult EmployeeView()
-        {
-            EmployeeData employee = new EmployeeData
+            WriteLog("---Started Employee Method----");
+            try
             {
-                EmployeeCode = "E101",
-                EmployeeName = "Kavita",
-                EmailAddress = "Toronto",
-                CompanyName = "AbCCompany"
+                EmployeeData employee = new EmployeeData
+                {
+                    EmployeeCode = "E101",
+                    EmployeeName = "Kavita",
+                    CompanyName = "AbCCompany",
+                    OccupationName = "Sr Developer",
+                    EmployeeStatus = "Active",
+                    EmailAddress = "kavitatengse@gmail.com"
 
-            };
+                };
+                ViewBag.Message = employee;
+            }
+            catch (Exception ex)
+            {
+                WriteLog("---Exception Occured Employee Method ----" + ex.Message);
+            }
+           
+           
+            return View();
+        }
 
-            ViewData["Message"] = employee;
-            return View(employee);
+        public void WriteLog(string logMessage)
+        {
+            LogEntry logEntry = new LogEntry();
+            logEntry.EventId = 100;
+            logEntry.Priority = 2;
+            logEntry.Message = logMessage;
+            Logger.Write(logEntry);
         }
     }
 }

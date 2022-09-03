@@ -5,6 +5,7 @@ using BusinessLayer.Model.Models;
 using DataAccessLayer.Model.Interfaces;
 using DataAccessLayer.Model.Models;
 using Microsoft.Extensions.Logging.Abstractions;
+using Microsoft.Practices.EnterpriseLibrary.Logging;
 
 namespace BusinessLayer.Services
 {
@@ -40,10 +41,19 @@ namespace BusinessLayer.Services
         public bool UpdateCompany(CompanyInfo company)
         {
             Company companyObject = _mapper.Map<Company>(company);
-            var result = _companyRepository.UpdateCompany(companyObject);
+            bool result=false;
+            try
+            {
+                result = _companyRepository.UpdateCompany(companyObject);
+            }
+            catch(System.Exception ex)
+            {
+                throw ex;
+                
+            }
+
             return result;
         }
 
-        
     }
 }

@@ -50,16 +50,32 @@ namespace WebApi.Controllers
         // POST api/<controller>
         public async Task<bool> Post([FromBody]CompanyInfo companyInfo)
         {
-            WriteLog("---Logging for SaveCompany Method----");
-            bool result = _companyService.SaveCompany(companyInfo);
+            bool result = false;
+            WriteLog("---Started SaveCompany Method----");
+            try
+            {
+                result = _companyService.SaveCompany(companyInfo);
+            }
+            catch (Exception ex)
+            {
+                WriteLog("---Exception Occured----" + ex.Message);
+            }
             return await Task.FromResult(result);
         }
 
         // PUT api/<controller>/5
         public async Task<bool> Put(int id, [FromBody] CompanyInfo companyInfo)
         {
-            WriteLog("---Logging for UpdateCompany Method----");
-            bool result = _companyService.UpdateCompany(companyInfo);
+            bool result =false;
+            WriteLog("---Started UpdateCompany Method----");
+            try
+            {
+                result = _companyService.UpdateCompany(companyInfo);
+            }
+            catch(Exception ex)
+            {
+                WriteLog("---Exception Occured----" + ex.Message);
+            }
             return await Task.FromResult(result);
         }
 

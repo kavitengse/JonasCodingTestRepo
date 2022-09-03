@@ -13,8 +13,8 @@ namespace WebApi
     {
         protected void Application_Start()
         {
-            GlobalConfiguration.Configure(WebApiConfig.Register);
-
+            WebApiConfig.RegisterRoutes(RouteTable.Routes);
+            
         }
     }
 }

@@ -1,0 +1,18 @@
+﻿@using BusinessLayer.Model.Models
+
+@{
+    ViewBag.Title = "Employee Data";
+}
+
+<h3>Passing Data From Controller to View using ViewBag</h3>
+
+@{ 
+    var data = (EmployeeData)ViewData["Message"];
+}
+<h3>Id: @data.EmployeeCode</h3>
+<h3>RecordName: @data.EmployeeName</h3>
+<h3>RecordDetail: @data.CompanyName</h3>
+<h3>Id: @data.OccupationName</h3>
+<h3>RecordName: @data.EmployeeStatus</h3>
+<h3>RecordDetail: @data.EmailAddress</h3>
+<h3>RecordDetail: @data.PhoneNumber</h3>   
